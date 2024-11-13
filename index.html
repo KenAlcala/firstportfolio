@@ -1,0 +1,178 @@
+<html>
+<head>
+    <title>Portfolio</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1f2937;
+            color: #e5e7eb;
+        }
+        .highlight {
+            color: #f59e0b;
+        }
+        .btn {
+            border: 2px solid #f59e0b;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            color: #f59e0b;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn:hover {
+            background-color: #f59e0b;
+            color: #1f2937;
+        }
+        .icon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #f59e0b;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            color: #f59e0b;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .icon-btn:hover {
+            background-color: #f59e0b;
+            color: #1f2937;
+        }
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const App = () => {
+            // Create refs for each section
+            const homeRef = React.useRef(null);
+            const servicesRef = React.useRef(null);
+            const portfoliosRef = React.useRef(null);
+            const contactRef = React.useRef(null);
+
+            // Function to scroll to a section when a nav link is clicked
+            const scrollToSection = (ref) => {
+                window.scrollTo({
+                    top: ref.current.offsetTop,
+                    behavior: "smooth"
+                });
+            };
+
+            return (
+                <div>
+                    <header className="flex justify-between items-center p-6 bg-gray-900">
+                        <div className="text-2xl font-bold text-white">KA.</div>
+                        <nav className="space-x-6">
+                            <a 
+                                href="#"
+                                onClick={() => scrollToSection(homeRef)} 
+                                className="text-white cursor-pointer">Home</a>
+                            <a 
+                                href="#"
+                                onClick={() => scrollToSection(servicesRef)} 
+                                className="text-white cursor-pointer">Services</a>
+                            <a 
+                                href="#"
+                                onClick={() => scrollToSection(portfoliosRef)} 
+                                className="text-white cursor-pointer">Portfolios</a>
+                            <a 
+                                href="#"
+                                onClick={() => scrollToSection(contactRef)} 
+                                className="text-white cursor-pointer">Contact Us</a>
+                        </nav>
+                    </header>
+
+                    <main>
+                        <section ref={homeRef} className="text-center py-20 bg-gray-800">
+                            <h1 className="text-5xl font-bold text-white">KEN ALCALA</h1>
+                            <p className="mt-4 text-gray-400">Instagram | Facebook | Gmail.</p>
+                            <div className="mt-10">
+                                <img 
+                                    src="C:\Users\Gerbie\Desktop\kentot\image\pic7.jpg" 
+                                    width="300px" 
+                                    height="300px" 
+                                    alt="Profile of KEN ALCALA" 
+                                    className="mx-auto rounded-full" />
+                            </div>
+                        </section>
+
+                        <section ref={servicesRef} className="text-center py-20 bg-gray-900">
+                            <h2 className="text-2xl font-bold text-yellow-500">What Am I Providing</h2>
+                            <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+                                If you want any of the following services please go on the freelance section where you can find platforms where I am available.
+                            </p>
+                            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div className="bg-gray-700 p-6 rounded-lg">
+                                    <i className="fas fa-utensils text-4xl text-yellow-500"></i>
+                                    <h3 className="mt-4 text-xl font-bold text-white">Cooking</h3>
+                                </div>
+                                <div className="bg-gray-700 p-6 rounded-lg">
+                                    <i className="fas fa-pencil-ruler text-4xl text-yellow-500"></i>
+                                    <h3 className="mt-4 text-xl font-bold text-white">Drawing</h3>
+                                </div>
+                                <div className="bg-gray-700 p-6 rounded-lg">
+                                    <i className="fas fa-camera text-4xl text-yellow-500"></i>
+                                    <h3 className="mt-4 text-xl font-bold text-white">Photo Editing</h3>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section ref={portfoliosRef} className="text-center py-20 bg-gray-800">
+                            <h2 className="text-2xl font-bold text-white">My Portfolios Collection</h2>
+                            <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+                                These are some of my own portfolios I made recently. Have a look at them and let me know if you like them.
+                            </p>
+                            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <img src="C:\Users\Gerbie\Desktop\kentot\image\pic5.jpg" width="200px" height="200px" alt="Portfolio item 1" className="rounded-lg" />
+				<img src="C:\Users\Gerbie\Desktop\kentot\image\pic3.jpg" width="200px" height="200px" alt="Portfolio item 1" className="rounded-lg" />
+                                <img src="C:\Users\Gerbie\Desktop\kentot\image\pic1.jpg" width="200px" height="200px"  alt="Portfolio item 2" className="rounded-lg" />
+                                <img src="C:\Users\Gerbie\Desktop\kentot\image\pic6.jpg" width="200px" height="200px"  alt="Portfolio item 3" className="rounded-lg" />
+				<img src="C:\Users\Gerbie\Desktop\kentot\image\pic4.jpg" width="200px" height="200px" alt="Portfolio item 1" className="rounded-lg" />
+				<img src="C:\Users\Gerbie\Desktop\kentot\image\pic2.jpg" width="200px" height="200px" alt="Portfolio item 1" className="rounded-lg" />
+
+                            </div>
+                        </section>
+
+                        <section ref={contactRef} className="text-center py-20 bg-gray-900">
+                            <h2 className="text-2xl font-bold text-white">How To Contact Us</h2>
+                            <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+                                You can contact us by completing the given form. This form will directly send us a mail.
+                            </p>
+                            <div className="mt-10 space-y-4">
+                                <div className="flex items-center justify-center space-x-4">
+                                    <i className="fas fa-phone-alt text-yellow-500"></i>
+                                    <span>+92 9516658492</span>
+                                </div>
+                                <div className="flex items-center justify-center space-x-4">
+                                    <i className="fas fa-envelope text-yellow-500"></i>
+                                    <span>kenalcalahe11.h@gmail.com</span>
+                                </div>
+                                <div className="flex items-center justify-center space-x-4">
+                                    <i className="fab fa-facebook text-yellow-500"></i>
+                                    <span><a href="https://www.facebook.com/kenalcala12" target="_blank" className="text-white">Facebook</a></span>
+                                </div>
+                                <div className="flex items-center justify-center space-x-4">
+                                    <i className="fab fa-instagram text-yellow-500"></i>
+                                    <span>www.instagram.com/ken.alcala</span>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
